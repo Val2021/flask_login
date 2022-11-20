@@ -8,9 +8,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, autoincrement=True, primary_key=True)
-    name = Column(String(86), nullable=False)
-    email = Column(String(86), nullable=False, unique=True)
-    password = Column(String(86), nullable=False)
+    name = Column(String(250), nullable=False)
+    email = Column(String(250), nullable=False, unique=True)
+    password = Column(String(250), nullable=False)
 
     def __init__(self, name, email, password):
         self.name = name

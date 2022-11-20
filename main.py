@@ -3,9 +3,9 @@ from app.models import User
 from flask import Flask
 from app.adapters.db import Session, engine
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def home():
     return render_template('home.html')
 
@@ -20,8 +20,8 @@ def register():
         user = User(name,email,pwd)
 
         db = Session()
-        db.session.add(user)
-        db.session.commit()
+        db.add(user)
+        db.commit()
 
     return render_template('register.html')
 
