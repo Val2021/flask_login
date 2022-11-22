@@ -9,3 +9,10 @@ engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 metadata = Base.metadata
+
+def get_db(): ##forma de gerar valores sobre demanda
+    db = Session()
+    try:
+        yield db
+    finally:
+        db.close()
