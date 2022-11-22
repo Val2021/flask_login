@@ -68,7 +68,8 @@ def login():
             return redirect(url_for('login'))
         
         login_user(user)
-        return redirect(url_for('home'))
+        return render_template('home.html')
+        # return redirect(url_for('home'))
         
     return render_template('login.html')
 
