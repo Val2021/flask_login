@@ -4,7 +4,7 @@ from flask import Flask
 from app.adapters.db import Session, DATABASE_URL
 import sqlalchemy as _sql
 import sqlalchemy.orm as _orm
-from flask_login import login_user, LoginManager
+from flask_login import login_user, LoginManager, logout_user
 from app.repositories.base_repository import BaseRepository
 import logging
 logging.basicConfig(level=logging.DEBUG)
